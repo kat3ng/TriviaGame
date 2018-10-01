@@ -5,14 +5,11 @@ NW Bootcamp HW Assignment 5 feat. Javascript and JQuery
 
 ### Overview
 
-In this assignment, You'll create a Trivia game using JavaScript for the logic and jQuery to manipulate HTML. Be sure to layout this app with valid HTML and stylish CSS.
+In this assignment, we were tasked with creating a Trivia game using JavaScript for the logic and jQuery to manipulate HTML. 
 
 
 ### Option One: Basic Quiz (Timed Form)
 
-![Basic](Images/1-basic.jpg)
-
-**[Click Here to Watch the Demo](https://youtu.be/fBIj8YsA9dk)**.
 
 * You'll create a trivia form with multiple choice or true/false options (your choice).
 
