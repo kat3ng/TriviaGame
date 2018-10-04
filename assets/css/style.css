@@ -91,7 +91,6 @@ label {
 }
 
 body .container {
-    font-family: 'Teko';
     height: 100%;
     text-align: center;
     display: none;
@@ -105,7 +104,7 @@ body .container {
 
 .questions {
     font-size: 25px;
-    font-family: 'Teko', sans-serif;
+    font-family: 'Six Caps', sans-serif;
 }
 
 .ques, label {

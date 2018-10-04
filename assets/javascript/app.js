@@ -11,6 +11,20 @@ var questions = [{
     divClass: ".protaganist"
 },
 {
+    ques: "The ________, also known as spirit energy, flows beneath the surface of the planet giving life to the world and everything in it",
+    ans: ["Reincarnation Station", "Lifeforce", "Lifestream", "The Force"],
+    name: "lifestream",
+    correct: "Lifestream",
+    divClass: ".lifestream"
+},
+{
+    ques: "What is the name of the rebel organization run by Barrett and Tifa?",
+    ans: ["SOLDIER", "SHINRA", "ALLIANCE", "AVALANCHE"],
+    name: "avalanche",
+    correct: "AVALANCHE",
+    divClass: ".avalanche"
+},
+{
     ques: "What town did Cloud and Tifa grow up in?",
     ans: ["Midgar", "Nibelheim", "Costa del Sol", "Junon"],
     name: "home-town",
@@ -18,34 +32,53 @@ var questions = [{
     divClass: ".home-town"
 },
 {
-
     ques: "Aerith came from an ancient people know as the ...",
     ans: ["Sylph", "Moogle", "Cetra", "Human"],
     name: "aerith",
     correct: "Cetra",
     divClass: ".aerith"
 },
-
 {
-    ques: "At the end of the FF7 remake, we find out that this shinra executive was controlling the moogle robot, Cait Sith",
+    ques: "What is Barrett's daughters name?",
+    ans: ["Marilyn", "Marlene", "Tifa", "Shannon"],
+    name: "daughter",
+    correct: "Marlene",
+    divClass: ".daughter"
+},
+{
+    ques: "At the end of the FF7, we find out that this shinra executive was controlling the moogle robot, Cait Sith",
     ans: ["Palmer", "Hojo", "Heidigger", "Reeve"],
     name: "cait-sith",
     correct: "Reeve",
     divClass: ".cait-sith"
 },
 {
-    ques: "What powersource does the company Shinra prduce",
+    ques: "What powersource does the company Shinra produce",
     ans: ["materia", "black materia", "mako", "Jenova"],
     name: "mako",
     correct: "mako",
     divClass: ".mako"
+},
+{
+    ques: "What is the top racing class in the Chocobo Racing at Golden Saucer?",
+    ans: ["Wonderfull Class", "Gold Class", "A Class", "S Class"],
+    name: "choco-class",
+    correct: "S Class",
+    divClass: ".choco-class"
+},
+{
+    ques: "Which weapon is considered to be the most difficult to defeat?",
+    ans: ["Ruby", "Emerald", "Diamond", "Ultimate"],
+    name: "ultimate",
+    correct: "Ultimate",
+    divClass: ".ultimate"
 },
 
 ] // end questions object
 
 var labels = ["first", "second", "third", "forth"];
 
-// click to start then display quesions
+// create a function to start and run the game
 var startGame =
     $("#start-btn").on('click', function () {
         $(this).parent().hide();
@@ -84,7 +117,7 @@ var countdown = function (seconds) {
             var unAnswered = 0;
 
             // loop through correctArray & radioName to match html elements & answers
-            for (var i = 0; i < 5; i++) {
+            for (var i = 0; i < 10; i++) {
 
                 if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
 
@@ -121,7 +154,7 @@ var gradeQuiz = $('#submit-btn').on('click', function () {
     var unAnswered = 0;
 
     // loop through correctArray & radioName to match html elements & answers
-    for (var i = 0; i < 5; i++) {
+    for (var i = 0; i < 10; i++) {
 
         if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
 
