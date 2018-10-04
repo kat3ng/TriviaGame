@@ -4,40 +4,41 @@
 
 // Create trivia questions. 
 var questions = [{
-    qname: "protaganist",
-    question: "What is the name of games main protaganist?",
-    answer: ["Squall Leonheart", "Zidane Triball", "Cid Highwind", "Cloud Strife"],
-    correct: "3",
-    image: ""
+    ques: "What is the name of games main protaganist?",
+    ans: ["Squall Leonheart", "Zidane Triball", "Cid Highwind", "Cloud Strife"],
+    name: "protaganist",
+    correct: "Cloud Strife",
+    divClass: ".protaganist"
 },
 {
-    qname: "home-town",
-    question: "What town did Cloud and Tifa grow up in?",
-    answer: ["Midgar", "Nibelheim", "Costa del Sol", "Junon"],
-    correct: "1",
-    image: ""
+    ques: "What town did Cloud and Tifa grow up in?",
+    ans: ["Midgar", "Nibelheim", "Costa del Sol", "Junon"],
+    name: "home-town",
+    correct: "Nibelheim",
+    divClass: ".home-town"
 },
 {
-    qname: "aerith",
-    question: "Aerith came from an ancient people know as the ...",
-    answer: ["Sylph", "Moogle", "Cetra", "Human"],
-    correct: "2",
-    image: ""
+
+    ques: "Aerith came from an ancient people know as the ...",
+    ans: ["Sylph", "Moogle", "Cetra", "Human"],
+    name: "aerith",
+    correct: "Cetra",
+    divClass: ".aerith"
 },
 
 {
-    qname: "cait-sith",
-    question: "At the end of the FF7 remake, we find out that this shinra executive was controlling the moogle robot, Cait Sith",
-    answer: ["Palmer", "Hojo", "Heidigger", "Reeve"],
-    correct: "3",
-    image: ""
+    ques: "At the end of the FF7 remake, we find out that this shinra executive was controlling the moogle robot, Cait Sith",
+    ans: ["Palmer", "Hojo", "Heidigger", "Reeve"],
+    name: "cait-sith",
+    correct: "Reeve",
+    divClass: ".cait-sith"
 },
 {
-    qname: "mako",
-    question: "What powersource does the company Shinra prduce",
-    answer: ["materia", "black materia", "mako", "jenova"],
-    correct: "2",
-    image: ""
+    ques: "What powersource does the company Shinra prduce",
+    ans: ["materia", "black materia", "mako", "Jenova"],
+    name: "mako",
+    correct: "mako",
+    divClass: ".mako"
 },
 
 ] // end questions object
@@ -49,20 +50,20 @@ var startGame =
     $("#start-btn").on('click', function () {
         $(this).parent().hide();
         $('.container').show();
-        countdown(30);
+        countdown(60);
         showQuestion();
     });
 
 // function for displaying questions
 var showQuestion = function () {
-    $(".questions :not('#submit-but')").empty();
-    // loops through the 5 questions 
-    for (var k = 0; k < 5; k++) {
-        $('.questions').prepend('<div class="' + questions[k].answer + '"></div>');
-        $(questions[k].divClass).append('<div class ="ques-title">' + questions[k].question + '</div>');
+    $(".questions :not('#submit-btn')").empty();
+    // loops through the 10 questions 
+    for (var j = 0; j < 10; j++) {
+        $('.questions').prepend('<div class="' + questions[j].name + '"></div>');
+        $(questions[j].divClass).append('<div class ="ques-title">' + questions[j].ques + '</div>');
         // loops through answers for each radio button
         for (var i = 0; i <= 3; i++) {
-            $(questions[k].divClass).append('<input type="radio"  name="' + questions[k].qname + '" value="' + questions[k].answer[i] + '"/><label for="' + labels[i] + '">' + questions[k].answer[i] + '</label>');
+            $(questions[j].divClass).append('<input type="radio"  name="' + questions[j].name + '" value="' + questions[j].ans[i] + '"/><label for="' + labels[i] + '">' + questions[j].ans[i] + '</label>');
         }
         $('.questions').prepend('<hr />');
     }
@@ -83,7 +84,7 @@ var countdown = function (seconds) {
             var unAnswered = 0;
 
             // loop through correctArray & radioName to match html elements & answers
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < 5; i++) {
 
                 if ($('input:radio[name="' + questions[i].name + '"]:checked').val() === questions[i].correct) {
 
@@ -97,7 +98,7 @@ var countdown = function (seconds) {
             $('#correctTimesUp').append(correctAnswers);
             // display wrongAnswers
             $('#wrongTimesUp').append(wrongAnswers);
-            $('#timesUp').fadeIn(1000).show();
+            $('#timesUp').fadeIn(2000).show();
 
             // alert("Times Up!");
             clearInterval(timer);
@@ -106,14 +107,14 @@ var countdown = function (seconds) {
     }, 1000);
 
     // click event for submit button to stop timer
-    $('#submit-but').on('click', function () {
+    $('#submit-btn').on('click', function () {
         clearInterval(timer);
     })
 }; // end countdown
 
 
 // function to grade quiz once submit button is clicked
-var gradeQuiz = $('#submit-but').on('click', function () {
+var gradeQuiz = $('#submit-btn').on('click', function () {
 
     var correctAnswers = 0;
     var wrongAnswers = 0;
@@ -144,4 +145,3 @@ var gradeQuiz = $('#submit-but').on('click', function () {
     $('#wrongScreen').append(wrongAnswers);
 
 }); // end gradeQuiz
-

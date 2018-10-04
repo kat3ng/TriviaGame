@@ -1,20 +1,21 @@
 @font-face {
     font-family: 'Playfair Display', serif;
-    src: url('https://fonts.googleapis.com/css?family=Playfair+Display');
+    font-family: 'Teko', sans-serif;
+    font-family: 'Six Caps', sans-serif;
+    src: url('https://fonts.googleapis.com/css?family=Playfair+Display|Six+Caps|Teko:300,400');
 }
 
 body {
     background-image: url('https://images4.alphacoders.com/144/thumb-1920-144554.jpg');
     background-size: cover;
-    font-family: 'playfair display', serif;
     color: whitesmoke;
     letter-spacing: 2px;
 }
 
 h1, h2, h3 {
-    font-family: 'Playfair Display';
+    font-family: 'Six Caps';
     font-size: 60px;
-    color: gray;
+    color: whitesmoke;
 }
 
 #splashscreen {
@@ -56,7 +57,7 @@ label {
 
 #answerScreen {
     display: none;
-    background-image: url('http://i.imgur.com/Cz8IzMC.jpg');
+    /* background-image: url('http://i.imgur.com/Cz8IzMC.jpg'); */
     width: 40%;
     margin: 0 auto;
     padding: 2%;
@@ -66,7 +67,7 @@ label {
 
 #timesUp {
     display: none;
-    background-image: url('http://i.imgur.com/Cz8IzMC.jpg');
+    /* background-image: url('http://i.imgur.com/Cz8IzMC.jpg'); */
     width: 35%;
     margin: 0 auto;
     padding: 2%;
@@ -75,11 +76,13 @@ label {
 }
 
 .up {
-    color: red;
+    color: rgba(255, 0, 0, 0.384);
 }
 
 .timeRemain {
-    padding: 2%;
+    align-content: center;
+    display: block;
+    padding: 5%;
     color: teal;
 }
 
@@ -88,6 +91,7 @@ label {
 }
 
 body .container {
+    font-family: 'Teko';
     height: 100%;
     text-align: center;
     display: none;
@@ -101,6 +105,7 @@ body .container {
 
 .questions {
     font-size: 25px;
+    font-family: 'Teko', sans-serif;
 }
 
 .ques, label {
