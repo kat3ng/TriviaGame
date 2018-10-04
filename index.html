@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -14,21 +16,54 @@
 </head>
 
 <body>
-
-    <div class="container">
-        <h1>Trivia Game</h1>
-        <div class="row-md-12">
-            <div class="col-md-3 side-bar card-body">Questions</div>
-            <div class="col-md-6">
-
-            </div>
-            <div class="col-md-3"></div>
+    <div id="splashscreen">
+        <div class="splashBox">
+            <h3>Welcome to</h3>
+            <h1>Final Fantasy VII Trivia!</h1>
+            <hr />
+            <p>You have 30 seconds to guess 5 questions!</p>
+            <br />
+            <p class="title-labels">Click To Start</p>
+            <button type="button" id="start-btn" class="btn btn-outline-secondary">START</button>
         </div>
-
     </div>
 
+    <div id="answerScreen">
+        <div class="splashBox2">
+            <h2>Lets see how you did</h2>
+            <hr />
+            <p id="correctScreen">Correct Answers: </p>
+            <p id="wrongScreen">Wrong Answers: </p>
+        </div>
+    </div>
+
+
+    <div id="timesUp">
+        <div class="wrongBox">
+            <h2 class="up">Times Up!</h2>
+            <hr />
+            <p>Here's youre score:</p>
+            <p id="correctTimesUp">Correct Answers: </p>
+            <p id="wrongTimesUp">Wrong Answers: </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <header>FF7 Trivia!</header>
+        <div class="row timeRemain">Time Remaining:
+            <div id="time-remain">60</div>
+        </div>
+
+        <div class="questions">
+            <button type="button" class="btn btn-primary black-background white" id="submit-but">Submit</button>
+            <!-- end equestions-->
+        </div>
+
+        <!-- Main Container-->
+    </div>
     <script src="assets/javascript/app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </body>
 
 </html>
