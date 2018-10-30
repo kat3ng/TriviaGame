@@ -1,6 +1,8 @@
 # Final Fantasy 7 Trivia Game
 NW Bootcamp HW Assignment 5 feat. Javascript and JQuery
 
+ https://kat3ng.github.io/TriviaGame/
+
 # JavaScript Assignment 2
 
 ### Overview
